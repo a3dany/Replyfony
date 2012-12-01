@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margen_ficha"
+        android:background="@drawable/fondo_tarjeta"
+        android:orientation="vertical"
+        android:padding="@dimen/margen_ficha_adentro" >
+
+        <TextView
+            android:id="@+id/textoTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tituloPorDefecto"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/rojo_claro"
+            android:textSize="25sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/descripcionPorDefecto"
+                    android:src="@drawable/sol_nube" />
+
+                <TextView
+                    android:id="@+id/textoEstado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/estadoPorDefecto"
+                    android:textColor="@color/negro1" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textoTemperatura"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/temperaturaPorDefecto"
+                android:textColor="@color/negro2"
+                android:textSize="60sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textoDia1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/diaPorDefecto"
+                    android:textColor="@color/negro1" />
+
+                <ImageView
+                    android:id="@+id/imagenDia1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/descripcionPorDefecto"
+                    android:src="@drawable/sol_nube" />
+
+                <TextView
+                    android:id="@+id/textoMaximoDia1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temperaturaPorDefecto"
+                    android:textColor="@color/negro1" />
+
+                <TextView
+                    android:id="@+id/textoMinimoDia1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temperaturaPorDefecto" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textoDia2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/diaPorDefecto"
+                    android:textColor="@color/negro1" />
+
+                <ImageView
+                    android:id="@+id/imagenDia2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/descripcionPorDefecto"
+                    android:src="@drawable/sol_nube" />
+
+                <TextView
+                    android:id="@+id/textoMaximoDia2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temperaturaPorDefecto"
+                    android:textColor="@color/negro1" />
+
+                <TextView
+                    android:id="@+id/textoMinimoDia2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temperaturaPorDefecto" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textoDia3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/diaPorDefecto"
+                    android:textColor="@color/negro1" />
+
+                <ImageView
+                    android:id="@+id/imagenDia3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/descripcionPorDefecto"
+                    android:src="@drawable/sol_nube" />
+
+                <TextView
+                    android:id="@+id/textoMaximoDia3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temperaturaPorDefecto"
+                    android:textColor="@color/negro1" />
+
+                <TextView
+                    android:id="@+id/textoMinimoDia3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temperaturaPorDefecto" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textoDia4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/diaPorDefecto"
+                    android:textColor="@color/negro1" />
+
+                <ImageView
+                    android:id="@+id/imagenDia4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/descripcionPorDefecto"
+                    android:src="@drawable/sol_nube" />
+
+                <TextView
+                    android:id="@+id/textoMaximoDia4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temperaturaPorDefecto"
+                    android:textColor="@color/negro1" />
+
+                <TextView
+                    android:id="@+id/textoMinimoDia4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temperaturaPorDefecto" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

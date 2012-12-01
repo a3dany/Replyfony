@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margen_ficha"
+        android:background="@drawable/fondo_tarjeta"
+        android:orientation="vertical"
+        android:padding="@dimen/margen_ficha_adentro" >
+
+        <TextView
+            android:id="@+id/textoTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tituloPorDefecto"
+            android:textColor="@color/rojo_claro"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tituloPorDefecto"
+            android:textColor="@color/negro1" />
+
+        <com.google.android.maps.MapView
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:apiKey="0OCH-YNJ5jSPZqotDzU2Yig2m_SDfAL0QWIP0ew" />
+    </LinearLayout>
+
+</LinearLayout>
