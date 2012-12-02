@@ -8,87 +8,153 @@
 package com.androfony.replyfony;
 
 public final class R {
+    public static final class anim {
+        public static final int animacion=0x7f040000;
+    }
     public static final class attr {
     }
     public static final class color {
-        public static final int blanco=0x7f040000;
-        public static final int blanco1=0x7f040001;
-        public static final int blanco2=0x7f040002;
-        public static final int celeste=0x7f040006;
-        public static final int celeste_claro=0x7f040007;
-        public static final int naranja=0x7f04000c;
-        public static final int naranja_claro=0x7f04000d;
-        public static final int negro=0x7f040003;
-        public static final int negro1=0x7f040004;
-        public static final int negro2=0x7f040005;
-        public static final int rojo=0x7f04000e;
-        public static final int rojo_claro=0x7f04000f;
-        public static final int verde=0x7f04000a;
-        public static final int verde_claro=0x7f04000b;
-        public static final int violeta=0x7f040008;
-        public static final int violeta_claro=0x7f040009;
+        public static final int blanco=0x7f050000;
+        public static final int blanco1=0x7f050001;
+        public static final int blanco2=0x7f050002;
+        public static final int celeste=0x7f050006;
+        public static final int celeste_claro=0x7f050007;
+        public static final int naranja=0x7f05000c;
+        public static final int naranja_claro=0x7f05000d;
+        public static final int negro=0x7f050003;
+        public static final int negro1=0x7f050004;
+        public static final int negro2=0x7f050005;
+        public static final int rojo=0x7f05000e;
+        public static final int rojo_claro=0x7f05000f;
+        public static final int verde=0x7f05000a;
+        public static final int verde_claro=0x7f05000b;
+        public static final int violeta=0x7f050008;
+        public static final int violeta_claro=0x7f050009;
     }
     public static final class dimen {
-        public static final int margen_ficha=0x7f050000;
-        public static final int margen_ficha_adentro=0x7f050001;
+        public static final int margen_ficha=0x7f060000;
+        public static final int margen_ficha_adentro=0x7f060001;
     }
     public static final class drawable {
         public static final int bolivar=0x7f020000;
-        public static final int circunferencia=0x7f020001;
-        public static final int divider=0x7f020002;
-        public static final int fondo_boton=0x7f020003;
-        public static final int fondo_opcion=0x7f020004;
-        public static final int fondo_tarjeta=0x7f020005;
-        public static final int ic_action_abajo=0x7f020006;
-        public static final int ic_action_agresion=0x7f020007;
-        public static final int ic_action_camara=0x7f020008;
-        public static final int ic_action_cancel=0x7f020009;
-        public static final int ic_action_droga=0x7f02000a;
-        public static final int ic_action_flechas=0x7f02000b;
-        public static final int ic_action_hechodetransito=0x7f02000c;
-        public static final int ic_action_homicidio=0x7f02000d;
-        public static final int ic_action_incendio=0x7f02000e;
-        public static final int ic_action_lugar=0x7f02000f;
-        public static final int ic_action_microfono=0x7f020010;
-        public static final int ic_action_ok=0x7f020011;
-        public static final int ic_action_persona=0x7f020012;
-        public static final int ic_action_personadesaparecida=0x7f020013;
-        public static final int ic_action_robo=0x7f020014;
-        public static final int ic_action_roboconarma=0x7f020015;
-        public static final int ic_action_suicidio=0x7f020016;
-        public static final int ic_launcher=0x7f020017;
-        public static final int img_camara=0x7f020018;
-        public static final int nublado=0x7f020019;
-        public static final int replyfony=0x7f02001a;
-        public static final int sol_nube=0x7f02001b;
-        public static final int strongest=0x7f02001c;
+        public static final int c0=0x7f020001;
+        public static final int c1=0x7f020002;
+        public static final int c10=0x7f020003;
+        public static final int c11=0x7f020004;
+        public static final int c12=0x7f020005;
+        public static final int c13=0x7f020006;
+        public static final int c14=0x7f020007;
+        public static final int c15=0x7f020008;
+        public static final int c16=0x7f020009;
+        public static final int c17=0x7f02000a;
+        public static final int c18=0x7f02000b;
+        public static final int c19=0x7f02000c;
+        public static final int c2=0x7f02000d;
+        public static final int c20=0x7f02000e;
+        public static final int c21=0x7f02000f;
+        public static final int c22=0x7f020010;
+        public static final int c23=0x7f020011;
+        public static final int c24=0x7f020012;
+        public static final int c25=0x7f020013;
+        public static final int c26=0x7f020014;
+        public static final int c27=0x7f020015;
+        public static final int c28=0x7f020016;
+        public static final int c29=0x7f020017;
+        public static final int c3=0x7f020018;
+        public static final int c30=0x7f020019;
+        public static final int c31=0x7f02001a;
+        public static final int c32=0x7f02001b;
+        public static final int c33=0x7f02001c;
+        public static final int c34=0x7f02001d;
+        public static final int c35=0x7f02001e;
+        public static final int c36=0x7f02001f;
+        public static final int c37=0x7f020020;
+        public static final int c38=0x7f020021;
+        public static final int c39=0x7f020022;
+        public static final int c4=0x7f020023;
+        public static final int c40=0x7f020024;
+        public static final int c41=0x7f020025;
+        public static final int c42=0x7f020026;
+        public static final int c43=0x7f020027;
+        public static final int c44=0x7f020028;
+        public static final int c45=0x7f020029;
+        public static final int c46=0x7f02002a;
+        public static final int c47=0x7f02002b;
+        public static final int c5=0x7f02002c;
+        public static final int c6=0x7f02002d;
+        public static final int c7=0x7f02002e;
+        public static final int c8=0x7f02002f;
+        public static final int c9=0x7f020030;
+        public static final int cero=0x7f020031;
+        public static final int choque=0x7f020032;
+        public static final int circunferencia=0x7f020033;
+        public static final int divider=0x7f020034;
+        public static final int fondo_boton=0x7f020035;
+        public static final int fondo_opcion=0x7f020036;
+        public static final int fondo_tarjeta=0x7f020037;
+        public static final int guia=0x7f020038;
+        public static final int guiacasa=0x7f020039;
+        public static final int guiawork=0x7f02003a;
+        public static final int ic_action_abajo=0x7f02003b;
+        public static final int ic_action_agresion=0x7f02003c;
+        public static final int ic_action_camara=0x7f02003d;
+        public static final int ic_action_cancel=0x7f02003e;
+        public static final int ic_action_droga=0x7f02003f;
+        public static final int ic_action_flechas=0x7f020040;
+        public static final int ic_action_hechodetransito=0x7f020041;
+        public static final int ic_action_homicidio=0x7f020042;
+        public static final int ic_action_incendio=0x7f020043;
+        public static final int ic_action_lugar=0x7f020044;
+        public static final int ic_action_microfono=0x7f020045;
+        public static final int ic_action_ok=0x7f020046;
+        public static final int ic_action_persona=0x7f020047;
+        public static final int ic_action_personadesaparecida=0x7f020048;
+        public static final int ic_action_robo=0x7f020049;
+        public static final int ic_action_roboconarma=0x7f02004a;
+        public static final int ic_action_suicidio=0x7f02004b;
+        public static final int ic_launcher=0x7f02004c;
+        public static final int img_camara=0x7f02004d;
+        public static final int nublado=0x7f02004e;
+        public static final int oriente=0x7f02004f;
+        public static final int replyfony=0x7f020050;
+        public static final int strongest=0x7f020051;
     }
     public static final class id {
-        public static final int button1=0x7f090014;
-        public static final int button2=0x7f090015;
-        public static final int editText1=0x7f090003;
-        public static final int imageButton1=0x7f090004;
-        public static final int imageView1=0x7f09000f;
-        public static final int imageView2=0x7f090013;
-        public static final int imagenHechoItem=0x7f090016;
-        public static final int imagenItem=0x7f09000c;
-        public static final int imagenTemperatura=0x7f090009;
-        public static final int layoutBotones=0x7f090005;
-        public static final int lista=0x7f090001;
-        public static final int mapa=0x7f090000;
-        public static final int menu_settings=0x7f090018;
-        public static final int textView1=0x7f090011;
-        public static final int textoEstadoTemperatura=0x7f09000a;
-        public static final int textoHechoItem=0x7f090017;
-        public static final int textoMarcador1=0x7f090010;
-        public static final int textoMarcador2=0x7f090012;
-        public static final int textoNumeroTemperatura=0x7f09000b;
-        public static final int textoSubtituloItem=0x7f09000e;
-        public static final int textoSubtituloMapa=0x7f090007;
-        public static final int textoTitulo=0x7f090002;
-        public static final int textoTituloItem=0x7f09000d;
-        public static final int textoTituloMapa=0x7f090006;
-        public static final int tituloTemperatura=0x7f090008;
+        public static final int botonImagen=0x7f0a0004;
+        public static final int btnVoz=0x7f0a0016;
+        public static final int button1=0x7f0a001e;
+        public static final int button2=0x7f0a001f;
+        public static final int cajaDescripcion=0x7f0a0003;
+        public static final int checkBox=0x7f0a0006;
+        public static final int imageView1=0x7f0a001a;
+        public static final int imageView2=0x7f0a001d;
+        public static final int imagenEquipo1=0x7f0a000b;
+        public static final int imagenEquipo2=0x7f0a000e;
+        public static final int imagenHechoItem=0x7f0a0020;
+        public static final int imagenItem=0x7f0a0017;
+        public static final int imagenTemperatura=0x7f0a0013;
+        public static final int layoutBotones=0x7f0a0005;
+        public static final int lista=0x7f0a0001;
+        public static final int mapa=0x7f0a0000;
+        public static final int menu_settings=0x7f0a0022;
+        public static final int textView1=0x7f0a000d;
+        public static final int textoDescripcionAccidentes=0x7f0a0008;
+        public static final int textoEquipo1=0x7f0a000c;
+        public static final int textoEquipo2=0x7f0a000f;
+        public static final int textoEstadoTemperatura=0x7f0a0014;
+        public static final int textoHechoItem=0x7f0a0021;
+        public static final int textoMarcador1=0x7f0a001b;
+        public static final int textoMarcador2=0x7f0a001c;
+        public static final int textoNumeroTemperatura=0x7f0a0015;
+        public static final int textoSubtituloItem=0x7f0a0019;
+        public static final int textoSubtituloMapa=0x7f0a0011;
+        public static final int textoSubtituloPartido=0x7f0a000a;
+        public static final int textoTitulo=0x7f0a0002;
+        public static final int textoTituloAccidentes=0x7f0a0007;
+        public static final int textoTituloItem=0x7f0a0018;
+        public static final int textoTituloMapa=0x7f0a0010;
+        public static final int textoTituloPartido=0x7f0a0009;
+        public static final int tituloTemperatura=0x7f0a0012;
     }
     public static final class layout {
         public static final int activity_checkin=0x7f030000;
@@ -101,25 +167,25 @@ public final class R {
         public static final int item_hecho=0x7f030007;
     }
     public static final class menu {
-        public static final int activity_main=0x7f080000;
+        public static final int activity_main=0x7f090000;
     }
     public static final class string {
-        public static final int app_name=0x7f060000;
-        public static final int cero=0x7f060004;
-        public static final int configuraciones=0x7f06000e;
-        public static final int descripcion=0x7f06000f;
-        public static final int descripcionPorDefecto=0x7f060008;
-        public static final int diaPorDefecto=0x7f060009;
-        public static final int dos=0x7f060005;
-        public static final int estadoPorDefecto=0x7f06000a;
-        public static final int futbol=0x7f060003;
-        public static final int gpsNoSoportado=0x7f06000c;
-        public static final int hello_world=0x7f060001;
-        public static final int menu_settings=0x7f060002;
-        public static final int redNoSoportado=0x7f06000d;
-        public static final int temperaturaPorDefecto=0x7f060007;
-        public static final int tituloPorDefecto=0x7f06000b;
-        public static final int versus=0x7f060006;
+        public static final int app_name=0x7f070000;
+        public static final int cero=0x7f070004;
+        public static final int configuraciones=0x7f07000e;
+        public static final int descripcion=0x7f07000f;
+        public static final int descripcionPorDefecto=0x7f070008;
+        public static final int diaPorDefecto=0x7f070009;
+        public static final int dos=0x7f070005;
+        public static final int estadoPorDefecto=0x7f07000a;
+        public static final int futbol=0x7f070003;
+        public static final int gpsNoSoportado=0x7f07000c;
+        public static final int hello_world=0x7f070001;
+        public static final int menu_settings=0x7f070002;
+        public static final int redNoSoportado=0x7f07000d;
+        public static final int temperaturaPorDefecto=0x7f070007;
+        public static final int tituloPorDefecto=0x7f07000b;
+        public static final int versus=0x7f070006;
     }
     public static final class style {
         /** 
@@ -143,10 +209,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
+        public static final int AppTheme=0x7f080001;
     }
 }

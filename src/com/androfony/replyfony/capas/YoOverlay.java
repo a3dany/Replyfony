@@ -17,23 +17,32 @@ import com.google.android.maps.Projection;
 
 public class YoOverlay extends Overlay {
 
-	private Location ubicacion;
+	private int latitud;
+	private int longitud;
+	private String tipo;
 
-	public YoOverlay(Location ubicacion) {
-		this.ubicacion = ubicacion;
+	public YoOverlay(int latitud, int longitud, String tipo) {
+		this.latitud = latitud;
+		this.longitud = longitud;
+		this.tipo = tipo;
 	}
 
 	@Override
 	public void draw(Canvas canvas, MapView mapView, boolean shadow) {
 		Projection proyeccion = mapView.getProjection();
-		int latitud = (int) (ubicacion.getLatitude() * 1E6);
-		int longitud = (int) (ubicacion.getLongitude() * 1E6);
 		GeoPoint geoPoint = new GeoPoint(latitud, longitud);
 
 		Point puntoCentro = new Point();
 		proyeccion.toPixels(geoPoint, puntoCentro);
 
-		Bitmap bitmap = BitmapFactory.decodeResource(mapView.getResources(), R.drawable.ic_action_lugar);
+		Bitmap bitmap = null;
+		if (tipo.equals("yo")) {
+			bitmap = BitmapFactory.decodeResource(mapView.getResources(), R.drawable.guia);
+		} else if (tipo.equals("trabajo")) {
+			bitmap = BitmapFactory.decodeResource(mapView.getResources(), R.drawable.guiawork);
+		} else if (tipo.equals("casa")) {
+			bitmap = BitmapFactory.decodeResource(mapView.getResources(), R.drawable.guiacasa);
+		}
 
 		canvas.drawBitmap(bitmap, puntoCentro.x - bitmap.getWidth(), puntoCentro.y - bitmap.getHeight(), null);
 

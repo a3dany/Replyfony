@@ -7,9 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.CheckBox;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.androfony.replyfony.adapters.AdaptadorListaConfiguraciones;
+import com.androfony.replyfony.servicios.ElServicio;
 
 public class ConfiguracionActivity extends Activity implements OnItemClickListener {
 
@@ -17,6 +20,8 @@ public class ConfiguracionActivity extends Activity implements OnItemClickListen
 
 	private ListView lista;
 	private AdaptadorListaConfiguraciones adaptadorLista;
+
+	private CheckBox checkBox;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,16 +35,12 @@ public class ConfiguracionActivity extends Activity implements OnItemClickListen
 		lista.setAdapter(adaptadorLista);
 		lista.setOnItemClickListener(this);
 
-		// mapa = (MapView) findViewById(R.id.mapa);
-		//
-		// mapa.setClickable(true);
-		//
-		// List<Overlay> capas = mapa.getOverlays();
-		// CentroOverlay miCapa = new CentroOverlay();
-		// capas.add(miCapa);
-		// mapa.postInvalidate();
-
+		checkBox = (CheckBox) findViewById(R.id.checkBox);
+	
+		startService(new Intent(this, ElServicio.class));
+	
 	}
+	
 
 	@Override
 	protected void onStart() {
@@ -52,9 +53,16 @@ public class ConfiguracionActivity extends Activity implements OnItemClickListen
 		int latitudTrabajo = settings.getInt("latitudTrabajo", 0);
 		int longitudTrabajo = settings.getInt("longitudTrabajo", 0);
 
+		boolean estadoServicio = settings.getBoolean("estadoServicio", false);
+		if (estadoServicio) {
+			checkBox.setChecked(true);
+		} else {
+			checkBox.setChecked(false);
+		}
+
 		adaptadorLista.eliminarTodo();
 		adaptadorLista.adicionarItem(R.drawable.ic_action_persona, "Sexo", "Masculino");
-		adaptadorLista.adicionarItem(R.drawable.ic_action_persona, "Casa", latitudCasa + ", " + longitudCasa);
+		adaptadorLista.adicionarItem(R.drawable.ic_action_persona, "Hogar", latitudCasa + ", " + longitudCasa);
 		adaptadorLista.adicionarItem(R.drawable.ic_action_persona, "Lugar de Estudio", latitudEducacion + ", "
 				+ longitudEducacion);
 		adaptadorLista.adicionarItem(R.drawable.ic_action_persona, "Lugar de Trabajo", latitudTrabajo + ", "
@@ -93,4 +101,24 @@ public class ConfiguracionActivity extends Activity implements OnItemClickListen
 		}
 	}
 
+	public void activarServicio(View view) {
+		if (checkBox.isChecked()) {
+			stopService(new Intent(this, ElServicio.class));
+
+			Toast.makeText(this, "Se desactivo el servicio.", Toast.LENGTH_SHORT).show();
+			SharedPreferences settings = getSharedPreferences("MisPreferencias", 0);
+			SharedPreferences.Editor editor = settings.edit();
+			editor.putBoolean("estadoServicio", false);
+			editor.commit();
+		} else {
+			startService(new Intent(this, ElServicio.class));
+			Toast.makeText(this, "Se activo el servicio.", Toast.LENGTH_SHORT).show();
+			
+			SharedPreferences settings = getSharedPreferences("MisPreferencias", 0);
+			SharedPreferences.Editor editor = settings.edit();
+			editor.putBoolean("estadoServicio", true);
+			editor.commit();
+		}
+
+	}
 }

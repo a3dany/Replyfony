@@ -39,6 +39,8 @@ public class CheckInActivity extends MapActivity {
 	private LocationManager locationManager;
 	private Handler handler;
 
+	private Location ubicacionActual;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -58,6 +60,10 @@ public class CheckInActivity extends MapActivity {
 
 				TextView textView = (TextView) view.findViewById(R.id.textoHechoItem);
 				intent.putExtra("tipo", textView.getText().toString());
+
+				GeoPoint geoPoint = mapa.getMapCenter();
+				intent.putExtra("latitud", geoPoint.getLatitudeE6());
+				intent.putExtra("longitud", geoPoint.getLongitudeE6());
 
 				startActivity(intent);
 			}
@@ -159,13 +165,15 @@ public class CheckInActivity extends MapActivity {
 	};
 
 	public void colocarPinEnMapa(Location ubicacion) {
+		Location ubicacionActual = ubicacion;
 		GeoPoint geoPoint = new GeoPoint((int) (ubicacion.getLatitude() * 1E6), (int) (ubicacion.getLongitude() * 1E6));
 		controlMapa.animateTo(geoPoint); // controlMapa.setCenter(geoPoint);
 		controlMapa.setZoom(16);
 
 		List<Overlay> capas = mapa.getOverlays();
 		capas.clear();
-		YoOverlay miCapa = new YoOverlay(ubicacion);
+		YoOverlay miCapa = new YoOverlay((int) (ubicacion.getLatitude() * 1E6), (int) (ubicacion.getLongitude() * 1E6),
+				"yo");
 		capas.add(miCapa);
 		mapa.postInvalidate();
 	}

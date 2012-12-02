@@ -15,28 +15,30 @@
             android:id="@+id/textoTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:lines="3"
             android:layout_marginBottom="5dp"
             android:text="@string/tituloPorDefecto"
             android:textColor="@color/rojo_claro"
             android:textSize="30sp" />
 
         <EditText
-            android:id="@+id/editText1"
+            android:id="@+id/cajaDescripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/descripcion"
-            android:inputType="textMultiLine" >
+            android:inputType="textMultiLine"
+            android:lines="3" >
 
             <requestFocus />
         </EditText>
 
         <ImageButton
-            android:id="@+id/imageButton1"
-            android:layout_width="wrap_content"
+            android:id="@+id/botonImagen"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:onClick="abrirCamara"
+            android:padding="15dp"
             android:src="@drawable/ic_action_camara" />
     </LinearLayout>
 

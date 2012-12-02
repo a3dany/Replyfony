@@ -30,15 +30,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tituloPorDefecto"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/rojo_claro" />
+                android:textColor="@color/rojo_claro"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/textoSubtituloItem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tituloPorDefecto"
-                android:textColor="@color/negro1" />
+                android:textColor="@color/negro1"
+                android:textSize="15sp" />
         </LinearLayout>
     </LinearLayout>
 
