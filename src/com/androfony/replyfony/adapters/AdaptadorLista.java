@@ -1,7 +1,6 @@
 package com.androfony.replyfony.adapters;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import android.content.Context;
 import android.graphics.Typeface;
@@ -9,20 +8,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.androfony.replyfony.R;
+import com.androfony.replyfony.util.Constants;
 
 public class AdaptadorLista extends BaseAdapter {
-	private LayoutInflater inflater;
-	private List<String> titulos;
-	private Context context;
 
-	public AdaptadorLista(Context contexto) {
-		this.context = contexto;
-		inflater = LayoutInflater.from(contexto);
-		titulos = new ArrayList<String>();
+	private ArrayList<String> titulos = new ArrayList<String>();
+	private ArrayList<Integer> tipos = new ArrayList<Integer>();
+
+	private LayoutInflater inflater;
+
+	public AdaptadorLista(Context context) {
+		inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	}
 
 	public int getCount() {
@@ -37,55 +36,61 @@ public class AdaptadorLista extends BaseAdapter {
 		return position;
 	}
 
+	@Override
+	public int getItemViewType(int position) {
+		return tipos.get(position);
+	}
+
 	public View getView(int position, View convertView, ViewGroup parent) {
-		ViewHolder holder;
+//		 Typeface t = Typeface.createFromAsset(context.getAssets(),
+//		 "fonts/Roboto-Light.ttf");
+		// holder.titulo.setTypeface(t);
+		ViewHolder holder = null;
+		int type = getItemViewType(position);
 		if (convertView == null) {
-			if (position % 3 == 0) {
-				convertView = inflater.inflate(R.layout.item_tiempo, null);
-			} else {
-				if (position % 2 == 0) {
-					convertView = inflater.inflate(R.layout.item_evento, null);
-				} else {
-					convertView = inflater.inflate(R.layout.item_distancia,
-							null);
-				}
+			holder = new ViewHolder();
+			switch (type) {
+			case Constants.ITEM_MAPA:
+				convertView = inflater.inflate(R.layout.item_distancia, null);
+				holder.textoTitulo = (TextView) convertView.findViewById(R.id.textoTitulo);
+				break;
+			case Constants.ITEM_INFO:
+				convertView = inflater.inflate(R.layout.item_evento, null);
+				holder.textoTitulo = (TextView) convertView.findViewById(R.id.textoTitulo);
+				break;
+			case Constants.ITEM_RESULTADO:
+
+				break;
 
 			}
-			holder = new ViewHolder();
-			holder.titulo = (TextView) convertView
-					.findViewById(R.id.textoTitulo);
-
 			convertView.setTag(holder);
+
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
-
-		Typeface t = Typeface.createFromAsset(context.getAssets(),
-				"fonts/Roboto-Light.ttf");
-		holder.titulo.setText(titulos.get(position));
-		holder.titulo.setTypeface(t);
+		holder.textoTitulo.setText(titulos.get(position));
 		return convertView;
 	}
 
 	static class ViewHolder {
-		TextView titulo;
+		public TextView textoTitulo;
 	}
 
-	public void adicionarItem(int recurso, String titulo, CharSequence subtitulo) {
+	public void adicionarItem(String titulo, int tipo) {
 		titulos.add(titulo);
+		tipos.add(tipo);
 		notifyDataSetChanged();
-	}
-
-	public void adicionarItem(String titulo, CharSequence subtitulo) {
-		titulos.add(titulo);
-	}
-
-	public void adicionarItem(String titulo) {
-		titulos.add(titulo);
 	}
 
 	public void eliminarTodo() {
 		titulos.clear();
+		tipos.clear();
+		notifyDataSetChanged();
+	}
+
+	public void eliminar(int posicion) {
+		titulos.remove(posicion);
+		tipos.remove(posicion);
 		notifyDataSetChanged();
 	}
 }

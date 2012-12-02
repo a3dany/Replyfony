@@ -15,5 +15,6 @@
     <string name="tituloPorDefecto">La Paz</string>
     <string name="gpsNoSoportado">GPS no soportado.</string>
     <string name="redNoSoportado">RED no soportado.</string>
+    <string name="configuraciones">Configuraciones</string>
 
 </resources>

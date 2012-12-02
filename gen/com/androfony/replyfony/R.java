@@ -8,94 +8,122 @@
 package com.androfony.replyfony;
 
 public final class R {
+    public static final class array {
+        public static final int hecho=0x7f040000;
+    }
     public static final class attr {
     }
     public static final class color {
-        public static final int blanco=0x7f040000;
-        public static final int blanco1=0x7f040001;
-        public static final int blanco2=0x7f040002;
-        public static final int celeste=0x7f040006;
-        public static final int celeste_claro=0x7f040007;
-        public static final int naranja=0x7f04000c;
-        public static final int naranja_claro=0x7f04000d;
-        public static final int negro=0x7f040003;
-        public static final int negro1=0x7f040004;
-        public static final int negro2=0x7f040005;
-        public static final int rojo=0x7f04000e;
-        public static final int rojo_claro=0x7f04000f;
-        public static final int verde=0x7f04000a;
-        public static final int verde_claro=0x7f04000b;
-        public static final int violeta=0x7f040008;
-        public static final int violeta_claro=0x7f040009;
+        public static final int blanco=0x7f050000;
+        public static final int blanco1=0x7f050001;
+        public static final int blanco2=0x7f050002;
+        public static final int celeste=0x7f050006;
+        public static final int celeste_claro=0x7f050007;
+        public static final int naranja=0x7f05000c;
+        public static final int naranja_claro=0x7f05000d;
+        public static final int negro=0x7f050003;
+        public static final int negro1=0x7f050004;
+        public static final int negro2=0x7f050005;
+        public static final int rojo=0x7f05000e;
+        public static final int rojo_claro=0x7f05000f;
+        public static final int verde=0x7f05000a;
+        public static final int verde_claro=0x7f05000b;
+        public static final int violeta=0x7f050008;
+        public static final int violeta_claro=0x7f050009;
     }
     public static final class dimen {
-        public static final int margen_ficha=0x7f050000;
-        public static final int margen_ficha_adentro=0x7f050001;
+        public static final int margen_ficha=0x7f060000;
+        public static final int margen_ficha_adentro=0x7f060001;
     }
     public static final class drawable {
         public static final int bolivar=0x7f020000;
-        public static final int fondo_boton=0x7f020001;
-        public static final int fondo_tarjeta=0x7f020002;
-        public static final int ic_launcher=0x7f020003;
-        public static final int nublado=0x7f020004;
-        public static final int sol_nube=0x7f020005;
-        public static final int strongest=0x7f020006;
+        public static final int circunferencia=0x7f020001;
+        public static final int fondo_boton=0x7f020002;
+        public static final int fondo_opcion=0x7f020003;
+        public static final int fondo_tarjeta=0x7f020004;
+        public static final int ic_action_abajo=0x7f020005;
+        public static final int ic_action_camara=0x7f020006;
+        public static final int ic_action_cancel=0x7f020007;
+        public static final int ic_action_flechas=0x7f020008;
+        public static final int ic_action_lugar=0x7f020009;
+        public static final int ic_action_microfono=0x7f02000a;
+        public static final int ic_action_ok=0x7f02000b;
+        public static final int ic_action_persona=0x7f02000c;
+        public static final int ic_launcher=0x7f02000d;
+        public static final int img_camara=0x7f02000e;
+        public static final int nublado=0x7f02000f;
+        public static final int replyfony=0x7f020010;
+        public static final int sol_nube=0x7f020011;
+        public static final int strongest=0x7f020012;
     }
     public static final class id {
-        public static final int button1=0x7f090008;
-        public static final int button2=0x7f090009;
-        public static final int imageView1=0x7f090003;
-        public static final int imageView2=0x7f090007;
-        public static final int imagenDia1=0x7f09000d;
-        public static final int imagenDia2=0x7f090011;
-        public static final int imagenDia3=0x7f090015;
-        public static final int imagenDia4=0x7f090019;
-        public static final int lista=0x7f090000;
-        public static final int menu_settings=0x7f09001c;
-        public static final int textView1=0x7f090005;
-        public static final int textView2=0x7f090002;
-        public static final int textoDia1=0x7f09000c;
-        public static final int textoDia2=0x7f090010;
-        public static final int textoDia3=0x7f090014;
-        public static final int textoDia4=0x7f090018;
-        public static final int textoEstado=0x7f09000a;
-        public static final int textoMarcador1=0x7f090004;
-        public static final int textoMarcador2=0x7f090006;
-        public static final int textoMaximoDia1=0x7f09000e;
-        public static final int textoMaximoDia2=0x7f090012;
-        public static final int textoMaximoDia3=0x7f090016;
-        public static final int textoMaximoDia4=0x7f09001a;
-        public static final int textoMinimoDia1=0x7f09000f;
-        public static final int textoMinimoDia2=0x7f090013;
-        public static final int textoMinimoDia3=0x7f090017;
-        public static final int textoMinimoDia4=0x7f09001b;
-        public static final int textoTemperatura=0x7f09000b;
-        public static final int textoTitulo=0x7f090001;
+        public static final int button1=0x7f0a0010;
+        public static final int button2=0x7f0a0006;
+        public static final int editText1=0x7f0a0003;
+        public static final int imageButton1=0x7f0a0004;
+        public static final int imageView1=0x7f0a000c;
+        public static final int imageView2=0x7f0a000f;
+        public static final int imagenDia1=0x7f0a0014;
+        public static final int imagenDia2=0x7f0a0018;
+        public static final int imagenDia3=0x7f0a001c;
+        public static final int imagenDia4=0x7f0a0020;
+        public static final int imagenItem=0x7f0a0008;
+        public static final int layoutBotones=0x7f0a0005;
+        public static final int lista=0x7f0a0001;
+        public static final int mapa=0x7f0a0000;
+        public static final int menu_settings=0x7f0a0023;
+        public static final int textView1=0x7f0a0002;
+        public static final int textoDia1=0x7f0a0013;
+        public static final int textoDia2=0x7f0a0017;
+        public static final int textoDia3=0x7f0a001b;
+        public static final int textoDia4=0x7f0a001f;
+        public static final int textoEstado=0x7f0a0011;
+        public static final int textoMarcador1=0x7f0a000d;
+        public static final int textoMarcador2=0x7f0a000e;
+        public static final int textoMaximoDia1=0x7f0a0015;
+        public static final int textoMaximoDia2=0x7f0a0019;
+        public static final int textoMaximoDia3=0x7f0a001d;
+        public static final int textoMaximoDia4=0x7f0a0021;
+        public static final int textoMinimoDia1=0x7f0a0016;
+        public static final int textoMinimoDia2=0x7f0a001a;
+        public static final int textoMinimoDia3=0x7f0a001e;
+        public static final int textoMinimoDia4=0x7f0a0022;
+        public static final int textoSubtitulo=0x7f0a000b;
+        public static final int textoSubtituloItem=0x7f0a000a;
+        public static final int textoTemperatura=0x7f0a0012;
+        public static final int textoTitulo=0x7f0a0007;
+        public static final int textoTituloItem=0x7f0a0009;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
-        public static final int item_distancia=0x7f030001;
-        public static final int item_evento=0x7f030002;
-        public static final int item_tiempo=0x7f030003;
+        public static final int activity_checkin=0x7f030000;
+        public static final int activity_checkinextras=0x7f030001;
+        public static final int activity_configuracion=0x7f030002;
+        public static final int activity_localizar=0x7f030003;
+        public static final int activity_main=0x7f030004;
+        public static final int item_configuracion=0x7f030005;
+        public static final int item_distancia=0x7f030006;
+        public static final int item_evento=0x7f030007;
+        public static final int item_tiempo=0x7f030008;
     }
     public static final class menu {
-        public static final int activity_main=0x7f080000;
+        public static final int activity_main=0x7f090000;
     }
     public static final class string {
-        public static final int app_name=0x7f060000;
-        public static final int cero=0x7f060004;
-        public static final int descripcionPorDefecto=0x7f060008;
-        public static final int diaPorDefecto=0x7f060009;
-        public static final int dos=0x7f060005;
-        public static final int estadoPorDefecto=0x7f06000a;
-        public static final int futbol=0x7f060003;
-        public static final int gpsNoSoportado=0x7f06000c;
-        public static final int hello_world=0x7f060001;
-        public static final int menu_settings=0x7f060002;
-        public static final int redNoSoportado=0x7f06000d;
-        public static final int temperaturaPorDefecto=0x7f060007;
-        public static final int tituloPorDefecto=0x7f06000b;
-        public static final int versus=0x7f060006;
+        public static final int app_name=0x7f070000;
+        public static final int cero=0x7f070004;
+        public static final int configuraciones=0x7f07000e;
+        public static final int descripcionPorDefecto=0x7f070008;
+        public static final int diaPorDefecto=0x7f070009;
+        public static final int dos=0x7f070005;
+        public static final int estadoPorDefecto=0x7f07000a;
+        public static final int futbol=0x7f070003;
+        public static final int gpsNoSoportado=0x7f07000c;
+        public static final int hello_world=0x7f070001;
+        public static final int menu_settings=0x7f070002;
+        public static final int redNoSoportado=0x7f07000d;
+        public static final int temperaturaPorDefecto=0x7f070007;
+        public static final int tituloPorDefecto=0x7f07000b;
+        public static final int versus=0x7f070006;
     }
     public static final class style {
         /** 
@@ -119,10 +147,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
+        public static final int AppTheme=0x7f080001;
     }
 }

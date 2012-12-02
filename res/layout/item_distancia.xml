@@ -21,13 +21,16 @@
             android:textSize="25sp" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textoSubtitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
             android:text="@string/tituloPorDefecto"
-            android:textColor="@color/negro1" />
+            android:textColor="@color/negro1"
+            android:textSize="18sp" />
 
         <com.google.android.maps.MapView
+            android:id="@+id/mapa"
             android:layout_width="fill_parent"
             android:layout_height="150dp"
             android:apiKey="0OCH-YNJ5jSPZqotDzU2Yig2m_SDfAL0QWIP0ew" />

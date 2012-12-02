@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="hecho">
+        <item>Secuestro</item>
+        <item>Incendio</item>
+        <item>Robo o hurto</item>
+        <item>Homicidio</item>
+        <item>Robo con arma</item>
+        <item>Trafico o venta de drogas</item>
+        <item>Agresiones o lesiones</item>
+        <item>Violación</item>
+        <item>Hecho de transito</item>
+        <item>Suicidio</item>
+    </string-array>
+
+</resources>
