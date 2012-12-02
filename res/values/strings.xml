@@ -16,5 +16,6 @@
     <string name="gpsNoSoportado">GPS no soportado.</string>
     <string name="redNoSoportado">RED no soportado.</string>
     <string name="configuraciones">Configuraciones</string>
+    <string name="descripcion">Descripción</string>
 
 </resources>

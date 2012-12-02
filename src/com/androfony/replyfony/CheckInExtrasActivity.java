@@ -6,18 +6,31 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class CheckInExtrasActivity extends Activity {
 
+	private TextView textoTitulo;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_checkinextras);
+		
+		textoTitulo = (TextView) findViewById(R.id.textoTitulo);
+		
+
+		String tipo = getIntent().getStringExtra("tipo");
+		textoTitulo.setText(tipo);
 	}
 
-	public void enviarDatos(View view) {
+	public void aceptar(View view) {
 
+	}
+
+	public void cancelar(View view) {
+		finish();
 	}
 
 	public void abrirCamara(View view) {

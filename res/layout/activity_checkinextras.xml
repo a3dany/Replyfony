@@ -8,22 +8,25 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:padding="15dp"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:padding="15dp" >
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/textoTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:lines="3"
+            android:layout_marginBottom="5dp"
             android:text="@string/tituloPorDefecto"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/rojo_claro" />
+            android:textColor="@color/rojo_claro"
+            android:textSize="30sp" />
 
         <EditText
             android:id="@+id/editText1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="@string/descripcion"
             android:inputType="textMultiLine" >
 
             <requestFocus />
@@ -45,14 +48,24 @@
         android:orientation="horizontal" >
 
         <Button
-            android:id="@+id/button2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:onClick="enviarDatos"
             android:layout_weight="1"
-            android:background="@drawable/fondo_opcion"
-            android:drawableTop="@drawable/ic_action_abajo"
+            android:background="@drawable/fondo_boton"
+            android:drawableTop="@drawable/ic_action_cancel"
+            android:onClick="cancelar"
+            android:text="@android:string/cancel"
+            android:textColor="@color/blanco1" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:background="@drawable/fondo_boton"
+            android:drawableTop="@drawable/ic_action_ok"
+            android:onClick="aceptar"
             android:text="@android:string/ok"
             android:textColor="@color/blanco1" />
     </LinearLayout>

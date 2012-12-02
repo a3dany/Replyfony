@@ -2,19 +2,117 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blanco1"
     android:orientation="vertical"
     tools:context=".MainActivity" >
 
-    <ListView
-        android:id="@+id/lista"
-        android:layout_width="match_parent"
+    <ScrollView
+        android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@color/blanco1"
-        android:cacheColorHint="#00000000"
-        android:divider="@color/blanco1"
-        android:dividerHeight="0dp" >
-    </ListView>
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <!-- INICIO DE TARJETAS -->
+
+
+            <!-- FICHA MAPA -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margen_ficha"
+                android:background="@drawable/fondo_tarjeta"
+                android:orientation="vertical"
+                android:padding="@dimen/margen_ficha_adentro" >
+
+                <TextView
+                    android:id="@+id/textoTituloMapa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tituloPorDefecto"
+                    android:textColor="@color/rojo_claro"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/textoSubtituloMapa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/tituloPorDefecto"
+                    android:textColor="@color/negro1"
+                    android:textSize="18sp" />
+
+                <com.google.android.maps.MapView
+                    android:id="@+id/mapa"
+                    android:layout_width="fill_parent"
+                    android:layout_height="150dp"
+                    android:apiKey="0OCH-YNJ5jSPZqotDzU2Yig2m_SDfAL0QWIP0ew" />
+            </LinearLayout>
+
+            <!-- FICHA DE TEMPERATURA -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margen_ficha"
+                android:background="@drawable/fondo_tarjeta"
+                android:orientation="vertical"
+                android:padding="@dimen/margen_ficha_adentro" >
+
+                <TextView
+                    android:id="@+id/tituloTemperatura"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tituloPorDefecto"
+                    android:textColor="@color/rojo_claro"
+                    android:textSize="25sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/imagenTemperatura"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/descripcionPorDefecto"
+                            android:src="@drawable/sol_nube" />
+
+                        <TextView
+                            android:id="@+id/textoEstadoTemperatura"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/estadoPorDefecto"
+                            android:textColor="@color/negro1" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textoNumeroTemperatura"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/temperaturaPorDefecto"
+                        android:textColor="@color/negro2"
+                        android:textSize="60sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- FIN DE TARJETAS -->
+
+        </LinearLayout>
+    </ScrollView>
 
     <LinearLayout
         android:id="@+id/layoutBotones"

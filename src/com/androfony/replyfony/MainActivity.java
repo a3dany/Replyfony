@@ -1,5 +1,14 @@
 package com.androfony.replyfony;
 
+import java.util.List;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONObject;
+
 import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
@@ -11,20 +20,17 @@ import android.os.Message;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.TranslateAnimation;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.LinearLayout;
-import android.widget.ListView;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.androfony.replyfony.adapters.AdaptadorLista;
-import com.androfony.replyfony.util.Constants;
-import com.androfony.replyfony.util.SwipeDetector;
+import com.androfony.replyfony.capas.YoOverlay;
 import com.androfony.replyfony.util.Util;
+import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapActivity;
 import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
+import com.google.android.maps.Overlay;
 
 public class MainActivity extends MapActivity {
 
@@ -32,48 +38,59 @@ public class MainActivity extends MapActivity {
 	private LocationManager locationManager;
 	private Handler handler;
 
-	// IU
-	private ListView lista;
-	private AdaptadorLista adaptadorLista;
-
 	// Mapa
 	private MapView mapa;
 	private MapController controlMapa;
+	
+	// Temperatura
+	private TextView textoTituloTemperatura;
+	private TextView textoNumeroTemperatura;
+	private TextView textoEstadoTemperatura;
+	private ImageView imagenTemperatura;
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		lista = (ListView) findViewById(R.id.lista);
-		adaptadorLista = new AdaptadorLista(this);
-		lista.setAdapter(adaptadorLista);
+		// Mapa
+		mapa = (MapView) findViewById(R.id.mapa);
+		controlMapa = mapa.getController();
+		
+		// Temperatura
+		textoTituloTemperatura = (TextView) findViewById(R.id.tituloTemperatura);
+		textoNumeroTemperatura = (TextView) findViewById(R.id.textoNumeroTemperatura);
+		textoEstadoTemperatura = (TextView) findViewById(R.id.textoEstadoTemperatura);
+		imagenTemperatura = (ImageView) findViewById(R.id.imagenTemperatura);
 
 		// ***
-		final SwipeDetector swipeDetector = new SwipeDetector();
-		lista.setOnTouchListener(swipeDetector);
+		// final SwipeDetector swipeDetector = new SwipeDetector();
+		// lista.setOnTouchListener(swipeDetector);
 
 		// ***
 
-		lista.setOnItemClickListener(new OnItemClickListener() {
-
-			@Override
-			public void onItemClick(AdapterView<?> arg0, View view, int position, long arg3) {
-				if (swipeDetector.swipeDetected()) {
-					// Toast.makeText(getApplicationContext(), "Swipe",
-					// Toast.LENGTH_SHORT).show();
-
-					TranslateAnimation anim = new TranslateAnimation(0, 0, -40, 0);
-					anim.setDuration(1000);
-					anim.setFillAfter(true);
-					view.setAnimation(anim);
-
-					adaptadorLista.eliminar(position);
-				} else {
-					Toast.makeText(getApplicationContext(), "Clic Normal", Toast.LENGTH_SHORT).show();
-				}
-			}
-		});
+		// lista.setOnItemClickListener(new OnItemClickListener() {
+		//
+		// @Override
+		// public void onItemClick(AdapterView<?> arg0, View view, int position,
+		// long arg3) {
+		// if (swipeDetector.swipeDetected()) {
+		// // Toast.makeText(getApplicationContext(), "Swipe",
+		// // Toast.LENGTH_SHORT).show();
+		//
+		// TranslateAnimation anim = new TranslateAnimation(0, 0, -40, 0);
+		// anim.setDuration(1000);
+		// anim.setFillAfter(true);
+		// view.setAnimation(anim);
+		//
+		// adaptadorLista.eliminar(position);
+		// } else {
+		// Toast.makeText(getApplicationContext(), "Clic Normal",
+		// Toast.LENGTH_SHORT).show();
+		// }
+		// }
+		// });
 
 		handler = new Handler() {
 			public void handleMessage(Message msg) {
@@ -81,30 +98,25 @@ public class MainActivity extends MapActivity {
 				case 7:
 					Location localizacionEncontrada = (Location) msg.obj;
 
-					// int latitud = (int) (localizacionEncontrada.getLatitude()
-					// * 1E6);
-					// int longitud = (int)
-					// (localizacionEncontrada.getLongitude() * 1E6);
-					// GeoPoint geoPoint = new GeoPoint(latitud, longitud);
-					// controlMapa.animateTo(geoPoint); //
-					// controlMapa.setCenter(geoPoint);
-					// controlMapa.setZoom(18);
-					//
-					Toast.makeText(getApplicationContext(),
-							localizacionEncontrada.getLatitude() + ", " + localizacionEncontrada.getLongitude(),
-							Toast.LENGTH_LONG).show();
+					int latitud = (int) (localizacionEncontrada.getLatitude() * 1E6);
+					int longitud = (int) (localizacionEncontrada.getLongitude() * 1E6);
+					GeoPoint geoPoint = new GeoPoint(latitud, longitud);
+					controlMapa.animateTo(geoPoint);
+					controlMapa.setCenter(geoPoint);
+					controlMapa.setZoom(15);
+					// Pin
+					List<Overlay> capas = mapa.getOverlays();
+					capas.clear();
+					YoOverlay miCapa = new YoOverlay(localizacionEncontrada);
+					capas.add(miCapa);
+					mapa.postInvalidate();
+
 					break;
 				}
 			}
 		};
 
 		locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-
-		// Tarjetas
-		adaptadorLista.adicionarItem("Distancia a casa", Constants.ITEM_MAPA);
-		adaptadorLista.adicionarItem("Cosas", Constants.ITEM_INFO);
-
-		LinearLayout layout = (LinearLayout) adaptadorLista.getItem(0);
 	}
 
 	@Override
@@ -122,6 +134,29 @@ public class MainActivity extends MapActivity {
 
 		// Iniciar localización
 		iniciarLocalizacion();
+		//cargarDatosTemperatura();
+	}
+
+	private void cargarDatosTemperatura() {
+		HttpClient cliente = new DefaultHttpClient();
+		HttpGet get = new HttpGet("http://192.168.43.241:8080/.../id");
+		get.setHeader("content-type", "application/json");
+		try {
+			HttpResponse respuesta = cliente.execute(get);
+			String res = EntityUtils.toString(respuesta.getEntity());
+			JSONObject object = new JSONObject(res);
+			int id = object.getInt("id");
+			String nombre = object.getString("nombre");
+			int telefono = object.getInt("telefono");
+			
+			// Visualizar
+			textoTituloTemperatura.setText("La Paz");
+			textoNumeroTemperatura.setText("");
+			textoEstadoTemperatura.setText("");
+			imagenTemperatura.setImageResource(0);
+
+		} catch (Exception ex) {
+		}
 
 	}
 

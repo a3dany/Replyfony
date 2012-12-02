@@ -14,8 +14,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.androfony.replyfony.adapters.AdaptadorListaHechos;
 import com.androfony.replyfony.capas.YoOverlay;
 import com.androfony.replyfony.util.Util;
 import com.google.android.maps.GeoPoint;
@@ -31,6 +33,7 @@ public class CheckInActivity extends MapActivity {
 	private MapController controlMapa;
 	// Lista
 	private ListView lista;
+	private AdaptadorListaHechos adaptadorLista;
 
 	// Localización
 	private LocationManager locationManager;
@@ -45,11 +48,17 @@ public class CheckInActivity extends MapActivity {
 		controlMapa = mapa.getController();
 
 		lista = (ListView) findViewById(R.id.lista);
+		adaptadorLista = new AdaptadorListaHechos(this);
+		lista.setAdapter(adaptadorLista);
 		lista.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View view, int position, long arg3) {
 				Intent intent = new Intent(getApplicationContext(), CheckInExtrasActivity.class);
+
+				TextView textView = (TextView) view.findViewById(R.id.textoHechoItem);
+				intent.putExtra("tipo", textView.getText().toString());
+
 				startActivity(intent);
 			}
 		});
@@ -67,6 +76,17 @@ public class CheckInActivity extends MapActivity {
 		};
 
 		locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+		// Set datas
+		adaptadorLista.adicionarItem(R.drawable.ic_action_suicidio, "Suicidio");
+		adaptadorLista.adicionarItem(R.drawable.ic_action_agresion, "Agresión");
+		adaptadorLista.adicionarItem(R.drawable.ic_action_droga, "Consumo de droga");
+		adaptadorLista.adicionarItem(R.drawable.ic_action_robo, "Robo");
+		adaptadorLista.adicionarItem(R.drawable.ic_action_roboconarma, "Robo con arma");
+		adaptadorLista.adicionarItem(R.drawable.ic_action_hechodetransito, "Hecho de transito");
+		adaptadorLista.adicionarItem(R.drawable.ic_action_incendio, "Incendio");
+		adaptadorLista.adicionarItem(R.drawable.ic_action_homicidio, "Homicidio");
+		adaptadorLista.adicionarItem(R.drawable.ic_action_personadesaparecida, "Persona desaparacida");
 
 	}
 
